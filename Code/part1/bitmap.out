@@ -1,0 +1,34 @@
+
+Allocating 16 bytes to ptr1
+
+Allocating 8 bytes to ptr2
+
+Allocating 8 bytes to ptr3
+
+Allocating 4 bytes to ptr4
+
+Current state of bitmap:
+11111111 11111111 11111111 11111111 11110000 00000000 00000000 00000000 
+
+Freeing ptr1
+Freeing ptr3
+
+Current state of bitmap:
+00000000 00000000 11111111 00000000 11110000 00000000 00000000 00000000 
+
+
+Allocating 12 bytes to ptr5
+
+Current state of bitmap:
+11111111 11110000 11111111 00000000 11110000 00000000 00000000 00000000 
+
+Allocating 32 bytes to ptr1
+
+Allocating 8 bytes to ptr1
+
+Current state of bitmap:
+11111111 11110000 11111111 11111111 11110000 00000000 00000000 00000000 
+Freeing all ptrs
+
+Current state of bitmap:
+00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 

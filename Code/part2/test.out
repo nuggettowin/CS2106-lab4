@@ -1,0 +1,75 @@
+Doing initial allocation/frees
+
+Allocating another large array
+
+Heap Meta Info:
+===============
+Total Size = 65536 bytes
+Start Address = 0x55d10f5992a0
+Partition Meta Size = 32 bytes
+Partition list:
+[+    0 |  2048 bytes | 1]
+[+ 2080 |  8192 bytes | 0]
+[+10304 |  1024 bytes | 1]
+[+11360 |    16 bytes | 1]
+[+11408 |  8192 bytes | 1]
+[+19632 | 40960 bytes | 1]
+[+60624 |  4880 bytes | 0]
+
+Allocating small array.
+Heap Meta Info:
+===============
+Total Size = 65536 bytes
+Start Address = 0x55d10f5992a0
+Partition Meta Size = 32 bytes
+Partition list:
+[+    0 |  2048 bytes | 1]
+[+ 2080 |  6144 bytes | 1]
+[+ 8256 |  2016 bytes | 0]
+[+10304 |  1024 bytes | 1]
+[+11360 |    16 bytes | 1]
+[+11408 |  8192 bytes | 1]
+[+19632 | 40960 bytes | 1]
+[+60624 |  4880 bytes | 0]
+
+Allocating small array. This should be allocated in the last hole
+Heap Meta Info:
+===============
+Total Size = 65536 bytes
+Start Address = 0x55d10f5992a0
+Partition Meta Size = 32 bytes
+Partition list:
+[+    0 |  2048 bytes | 1]
+[+ 2080 |  6144 bytes | 1]
+[+ 8256 |  2016 bytes | 0]
+[+10304 |  1024 bytes | 1]
+[+11360 |    16 bytes | 1]
+[+11408 |  8192 bytes | 1]
+[+19632 | 40960 bytes | 1]
+[+60624 |  1024 bytes | 1]
+[+61680 |  3824 bytes | 0]
+
+Freeing pointers now. There should not be any two adjacent partitions that are free - they should be merged.
+
+Heap Meta Info:
+===============
+Total Size = 65536 bytes
+Start Address = 0x55d10f5992a0
+Partition Meta Size = 32 bytes
+Partition list:
+[+    0 |  2048 bytes | 1]
+[+ 2080 |  6144 bytes | 1]
+[+ 8256 | 52336 bytes | 0]
+[+60624 |  1024 bytes | 1]
+[+61680 |  3824 bytes | 0]
+
+Midway free check.
+
+Heap Meta Info:
+===============
+Total Size = 65536 bytes
+Start Address = 0x55d10f5992a0
+Partition Meta Size = 32 bytes
+Partition list:
+[+    0 | 65504 bytes | 0]
+
